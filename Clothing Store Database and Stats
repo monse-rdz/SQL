@@ -1,0 +1,43 @@
+--Create database for clothing store.
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, color TEXT, size TEXT, price INTEGER);
+
+
+INSERT INTO store VALUES (1, "Bohemian Blouse","White","S",12.99);
+INSERT INTO store VALUES (2, "Chunky Cardigan","Beige","M",68.99);
+INSERT INTO store VALUES (3, "Wide-Leg Pants","Black","XL",74.99);
+INSERT INTO store VALUES (4, "Polo Shirt","Navy Blue","XS",35.99);
+INSERT INTO store VALUES (5, "Cargo Pants","Green","XL",98.99);
+INSERT INTO store VALUES (6,"Blazer","Brown","XS",102.99);
+INSERT INTO store VALUES (7,"Sweater Jacket","Grey","L",76.99);
+INSERT INTO store VALUES (8,"Maxi-Dress","Multi","M",39.99);
+INSERT INTO store VALUES (9,"Mini Dress","Yellow","XL",46.99);
+INSERT INTO store VALUES (10,"Denim Jacket","Blue","M",78.99);
+INSERT INTO store VALUES (11,"Tank Top","Black","S",27.99);
+INSERT INTO store VALUES (12,"Leather Jacket","Black","XS",230.99);
+INSERT INTO store VALUES (13, "Mock-Neck Top","Red","L",35.99);
+INSERT INTO store VALUES (14,"Cocktail dress","Orange","XS",145.99);
+INSERT INTO store VALUES (15, "Silk Shirt","White","M",67.99);
+
+
+--Display prices of clothing items from least to most expensive
+SELECT price FROM store
+ORDER BY price ASC;
+
+
+--Display prices of clothing items that are less than $50 dollars
+
+SELECT price FROM store
+WHERE price <=50
+ORDER BY price ASC;
+
+
+--Display the top 3 most expensive clothing items in the store
+SELECT price FROM store
+WHERE price >50
+ORDER BY price DESC
+LIMIT 3;
+
+--What is the average price of a clothing item in the store?
+SELECT AVG(price) 
+FROM store;
